@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layerdraw</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="tool-section">
+                <button type="button" data-tool="select">Select</button>
+                <button type="button" data-tool="rect">Rectangle</button>
+                <button type="button" data-tool="ellipse">Ellipse</button>
+                <button type="button" data-tool="text">Text</button>
+                <button type="button" data-tool="arrow">Arrow</button>
+            </div>
+            
+            <hr class="sidebar-divider">
+            
+            <div class="layer-section" hx-get="/layers" hx-trigger="load" hx-target="#layer-container">
+                <h3>Layers</h3>
+                <div id="layer-container">
+                    <!-- Layer panel will be loaded here -->
+                </div>
+            </div>
+
+            <div class="view-section">
+                <button type="button" id="grid-toggle">Show Grid</button>
+            </div>
+        </aside>
+        <main id="canvas-container"></main>
+    </div>
+    <script src="/static/constants.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>

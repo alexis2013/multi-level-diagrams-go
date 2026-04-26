@@ -1,0 +1,8 @@
+<div id="layer-list" class="layer-list">
+    {{range .Layers}}
+        {{template "layer_item.html" .}}
+    {{end}}
+</div>
+<div class="layer-actions">
+    <button hx-post="/layers" hx-target="#layer-list" hx-swap="innerHTML">Add Layer</button>
+</div>

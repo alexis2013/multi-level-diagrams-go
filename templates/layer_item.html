@@ -1,0 +1,14 @@
+<div class="layer-item">
+    <button class="toggle-btn" 
+            hx-post="/layers/{{.ID}}/toggle" 
+            hx-target="#layer-list" 
+            hx-swap="innerHTML">
+        {{if .Visible}}*{{else}}—{{end}}
+    </button>
+    <input type="text" name="name" value="{{.Name}}" 
+           hx-post="/layers/{{.ID}}/rename" 
+           hx-target="#layer-list" 
+           hx-swap="innerHTML" 
+           hx-trigger="blur, keyup[key=='Enter']" 
+           hx-include="this">
+</div>

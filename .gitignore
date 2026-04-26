@@ -31,4 +31,4 @@ Editor/IDE
 .idea/
 .vscode/
 
-temp/
+tmp/
